@@ -1,0 +1,45 @@
+# Dependencies
+node_modules/
+.pnp
+.pnp.js
+
+# Production builds
+dist/
+film-build/
+
+# Local environment & secrets
+.env
+.env.local
+.env.*.local
+*.log
+
+# Raw video files
+*.mp4
+
+# Playwright screenshots and test scripts
+screenshots/
+test_and_screenshot.js
+generate_film_frames.py
+
+# Scratch debug images in root
+alpha_mask.png
+crop_*.png
+diff_*.png
+exact_watermark_crop.png
+mean_map.png
+sparkle_*.png
+std_map.png
+watermark_test.png
+zoom_*.png
+
+# Reference images in root (already copied to public/)
+carriage.jpg
+character.jpg
+kingdom.jpg
+Elegant_*.jpg
+Enchanted_*.jpg
+Magical_*.jpg
+
+# OS files
+.DS_Store
+Thumbs.db

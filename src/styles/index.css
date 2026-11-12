@@ -1,0 +1,124 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    min-height: 100%;
+    background-color: #080a24;
+    color: #ffffff;
+    font-family: 'Manrope', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
+  }
+
+  /* Hide scrollbars cleanly */
+  ::-webkit-scrollbar {
+    display: none;
+  }
+  * {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+}
+
+/* Typography styles */
+.font-decorative {
+  font-family: 'Cinzel Decorative', serif;
+}
+
+.font-cinzel {
+  font-family: 'Cinzel', serif;
+}
+
+.font-garamond {
+  font-family: 'Cormorant Garamond', serif;
+}
+
+.font-manrope {
+  font-family: 'Manrope', sans-serif;
+}
+
+/* Glow Text Shadows with high-contrast legibility */
+.glow-gold {
+  color: #fff3cf;
+  text-shadow: 0 0 20px rgba(241, 207, 134, 0.8), 0 0 40px rgba(241, 207, 134, 0.45), 0 2px 8px rgba(8, 10, 36, 0.95);
+}
+
+.glow-gold-subtle {
+  color: #fcf6e6;
+  text-shadow: 0 0 14px rgba(241, 207, 134, 0.6), 0 0 28px rgba(241, 207, 134, 0.3), 0 2px 6px rgba(8, 10, 36, 0.95);
+}
+
+.glow-rose {
+  color: #fce2ee;
+  text-shadow: 0 0 18px rgba(246, 182, 214, 0.75), 0 0 36px rgba(246, 182, 214, 0.4), 0 2px 8px rgba(8, 10, 36, 0.95);
+}
+
+.glow-lavender {
+  color: #f0eaff;
+  text-shadow: 0 0 18px rgba(201, 183, 233, 0.7), 0 0 32px rgba(201, 183, 233, 0.35), 0 2px 8px rgba(8, 10, 36, 0.95);
+}
+
+/* Soft blurred radial shadow pools behind text (no boxes) */
+.shadow-pool-radial {
+  background: radial-gradient(ellipse at center, rgba(8, 10, 36, 0.95) 0%, rgba(8, 10, 36, 0.75) 45%, rgba(8, 10, 36, 0) 80%);
+  filter: blur(14px);
+  pointer-events: none;
+}
+
+.shadow-pool-radial-lg {
+  background: radial-gradient(ellipse at center, rgba(8, 10, 36, 0.96) 0%, rgba(8, 10, 36, 0.8) 50%, rgba(8, 10, 36, 0) 85%);
+  filter: blur(24px);
+  pointer-events: none;
+}
+
+/* Premium ultra-transparent frosted glass card */
+.glass-premium {
+  backdrop-filter: blur(16px) saturate(1.5);
+  -webkit-backdrop-filter: blur(16px) saturate(1.5);
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.08) 0%, rgba(201, 183, 233, 0.04) 40%, rgba(12, 16, 51, 0.75) 100%);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 24px 60px -12px rgba(8, 10, 36, 0.9), inset 0 0 24px rgba(241, 207, 134, 0.1);
+}
+
+/* Glass pill button / badge */
+.glass-pill {
+  backdrop-filter: blur(12px) saturate(1.3);
+  -webkit-backdrop-filter: blur(12px) saturate(1.3);
+  background: rgba(12, 16, 51, 0.7);
+  border: 1px solid rgba(241, 207, 134, 0.35);
+  box-shadow: 0 8px 24px rgba(8, 10, 36, 0.6), inset 0 1px 1px rgba(255, 255, 255, 0.2);
+}
+
+/* Specular sheen sweep */
+@keyframes specularSheen {
+  0% { transform: translateX(-150%) skewX(-20deg); }
+  100% { transform: translateX(250%) skewX(-20deg); }
+}
+
+.sheen-active::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 40%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.18), rgba(241, 207, 134, 0.22), transparent);
+  animation: specularSheen 3.5s infinite ease-in-out;
+  pointer-events: none;
+}
+
+/* Floating lantern drift */
+@keyframes driftSlow {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-12px) rotate(1.2deg); }
+}
+
+.floating-drift {
+  animation: driftSlow 6s ease-in-out infinite;
+}
